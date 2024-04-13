@@ -1,0 +1,51 @@
+[build-system]
+requires = ["hatchling", "hatch-requirements-txt"]
+build-backend = "hatchling.build"
+
+[project]
+name = "wildtorch"
+dynamic = ["version", "dependencies", "optional-dependencies"]
+description = 'WildTorch: Leveraging GPU Acceleration for High-Fidelity, Stochastic Wildfire Simulations with PyTorch'
+readme = "README.md"
+requires-python = ">=3.8"
+license = { file = "LICENSE" }
+keywords = []
+authors = [
+    { name = "Zeyu Xia", email = "i@xiaze.pro" },
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Environment :: GPU",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Atmospheric Science",
+]
+
+[project.urls]
+Documentation = "https://github.com/xiazeyu/WildTorch#readme"
+Issues = "https://github.com/xiazeyu/WildTorch/issues"
+Source = "https://github.com/xiazeyu/WildTorch"
+
+[tool.hatch.version]
+path = "wildtorch/__about__.py"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
+
+[tool.hatch.metadata.hooks.requirements_txt.optional-dependencies]
+minimal = ["requirements-minimal.txt"]
+
+[[tool.hatch.envs.all.matrix]]
+python = ["3.8", "3.9", "3.10", "3.11", "3.12"]
+
+[tool.hatch.envs.docs]
+dependencies = [
+    "mkdocs",
+    "mkdocstrings[python]",
+]
+
+[tool.hatch.envs.docs.scripts]
+build = "mkdocs build --clean --strict"
+serve = "mkdocs serve -w wildtorch/ --dev-addr localhost:8000"

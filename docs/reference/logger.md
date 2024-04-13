@@ -1,0 +1,3 @@
+# Logger
+
+::: wildtorch.logger.Logger

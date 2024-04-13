@@ -1,0 +1,23 @@
+site_name: WildTorch
+repo_url: https://github.com/xiazeyu/WildTorch
+nav:
+  - index.md
+  - API Reference:
+      - reference/WildTorchSimulator.md
+      - reference/SimulatorConstants.md
+      - reference/dataset.md
+      - reference/logger.md
+      - reference/metrics.md
+      - reference/utils.md
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            merge_init_into_class: true
+            annotations_path: source
+theme: readthedocs
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js

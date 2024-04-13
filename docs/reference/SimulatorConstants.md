@@ -1,0 +1,3 @@
+# SimulatorConstants
+
+::: wildtorch.SimulatorConstants
