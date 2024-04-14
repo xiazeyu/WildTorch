@@ -35,7 +35,7 @@ path = "wildtorch/__about__.py"
 files = ["requirements.txt"]
 
 [tool.hatch.metadata.hooks.requirements_txt.optional-dependencies]
-minimal = ["requirements-minimal.txt"]
+full = ["requirements-full.txt"]
 
 [[tool.hatch.envs.all.matrix]]
 python = ["3.8", "3.9", "3.10", "3.11", "3.12"]

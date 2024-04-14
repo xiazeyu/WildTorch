@@ -6,7 +6,6 @@ if TYPE_CHECKING:
     from datasets import Dataset
 
 import torch
-from torchvision.transforms import v2, InterpolationMode
 
 
 def load_wildfire_sim_maps(device: torch.device = torch.device('cuda' if torch.cuda.is_available() else 'cpu'),
@@ -156,6 +155,8 @@ def data_augmentation(map_data: torch.Tensor,
     Returns:
         The augmented map data tensor.
     """
+    from torchvision.transforms import v2, InterpolationMode
+
     transforms = v2.Compose([v2.RandomHorizontalFlip(p=0.5), v2.RandomVerticalFlip(p=0.5), v2.RandomChoice(
         [v2.Resize(size=shape, interpolation=InterpolationMode.BILINEAR, antialias=True),
          v2.RandomCrop(size=shape, padding=None),
