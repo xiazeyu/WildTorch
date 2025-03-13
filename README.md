@@ -1,3 +1,9 @@
+# Deprecation Notice
+
+This repository has been deprecated in favor of a new project that offers more functionality and features: [PyTorchFire](https://github.com/xiazeyu/PyTorchFire).
+
+To ensure better maintenance, this repository will soon be archived. Please transition to the new repository.
+
 # WildTorch
 
 [![Hatch project](https://img.shields.io/badge/%F0%9F%A5%9A-Hatch-4051b5.svg)](https://github.com/pypa/hatch)
